@@ -5,13 +5,13 @@ if (Meteor.isClient) {
     });
 
     Router.map(function() {
-        this.route('blog', {
+        this.route('typography', {
             path: '/'
         });
         this.route('home', {
             path: '/home'
         });
-        this.route('articles', {
+        this.route('blog', {
             path: '/blog'
         });
         this.route('blogsingle', {
@@ -43,9 +43,6 @@ if (Meteor.isClient) {
         });
         this.route('gallery4', {
             path: '/gallery4'
-        });
-        this.route('typography', {
-            path: '/typography'
         });
     });
 }

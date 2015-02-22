@@ -20,7 +20,17 @@ if (Meteor.isClient) {
                 hideAddressBar();
             }
         });
+
+        document.addEventListener("deviceready", onDeviceReady, false);
     });
+
+    function onDeviceReady() {
+        document.addEventListener("backbutton", onBackKeyDown, false);
+    }
+
+    function onBackKeyDown() {
+        navigator.app.exitApp()
+    }
 
     Template.layout.events({
         'click #menutrigger': function(event) {
@@ -226,20 +236,22 @@ if (Meteor.isClient) {
     }
 
     function hideAddressBar() {
-        if (!window.location.hash) {
-            if (document.documentElement.scrollHeight < window.outerHeight) {
+        try {
+            if (!window.location.hash) {
+                if (document.documentElement.scrollHeight < window.outerHeight) {
 
-                /* Expands Page Height if it's smaller than window */
+                    /* Expands Page Height if it's smaller than window */
 
-                document.body.style.minHeight = (window.outerHeight + 60) + 'px';
-                document.getElementById('container').style.minHeight = (window.outerHeight + 60) + 'px';
-                document.getElementById('content-container').style.minHeight = (window.outerHeight + 60) + 'px';
+                    document.body.style.minHeight = (window.outerHeight + 60) + 'px';
+                    document.getElementById('container').style.minHeight = (window.outerHeight + 60) + 'px';
+                    document.getElementById('content-container').style.minHeight = (window.outerHeight + 60) + 'px';
+                }
+
+                setTimeout(function() {
+                    window.scrollTo(0, 1);
+                }, 0);
             }
-
-            setTimeout(function() {
-                window.scrollTo(0, 1);
-            }, 0);
-        }
+        } catch (e) {}
     }
 
     Session.set("Mongol", {
