@@ -1,0 +1,99 @@
+<head>
+    <title>Articles</title>
+
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,100,200,700,500' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body>
+<!--
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+-->
+</body>
+
+<template name="layout">
+    <div id="container" class="touch-gesture">
+
+        {{>navbar}}
+
+        <section id="content-container" class="dark">
+            <header id="header">
+                <div id="menutrigger" class="header-button left icon-menu"></div>
+                <h1><a class='current' href="/home">N<span class="icon-clock-1"></span>W</a></h1>
+            </header>
+
+
+            <div id="wrapper">
+                {{>yield}}
+            </div>
+        </section>
+    </div>
+</template>
+
+<template name="navbar">
+    <aside id="sidemenu-container">
+        <div id="sidemenu">
+            <div id="author-profile">
+                <div class="author-profile-photo">
+                    <img src="images/authorProfile.jpg" alt="">
+                </div>
+                <div class="author-profile-content">
+                    <p class="title">Brian Collins</p>
+                    <p class="subtitle">@briancoll</p>
+                </div>
+            </div>
+            <nav id="nav-container">
+                <ul class="nav">
+                    <li class='current'><a class='current' href="/blog">Home</a>
+                    </li>
+                    <li>
+                        <a href="/blog" class="nav-with-ul">Blog</a>
+                        <span class="nav-child-container"><span class="nav-child-trigger">+</span></span>
+                        <ul style="height: 0;">
+                            <li><a href="/blogsinglevimeo">Video Format</a>
+                            </li>
+                            <li><a href="/blogsingle">Gallery Format</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/gallery" class="nav-with-ul">Gallery</a>
+                        <span class="nav-child-container"><span class="nav-child-trigger">+</span></span>
+                        <ul style="height: 0;">
+                            <li><a href="/gallery3">3 Collumn</a>
+                            </li>
+                            <li><a href="/gallery4">4 Collumn</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="/components" class="nav-with-ul">Features</a>
+                        <span class="nav-child-container"><span class="nav-child-trigger">+</span></span>
+                        <ul style="height: 0;">
+                            <li><a href="/typography">Typography</a>
+                            </li>
+                            <li><a href="/components">Components</a>
+                            </li>
+                            <li><a href="/buttons">Buttons</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/contact">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </aside>
+</template>
+
+
+<template name="articles">
+
+</template>
+
+<template name="404">
+    <div class="text-center" align="center">
+        <h2>404 Error</h2>
+    </div>
+</template>
